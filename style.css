@@ -76,14 +76,6 @@ aside {
     height: fit-content;
 }
 
-aside h2 {
-    color: var(--arcade-color, #FF0000);
-    font-size: 1.1em;
-    margin-top: 0;
-    font-family: 'Press Start 2P', monospace;
-    transition: color 1s;
-}
-
 aside ul {
     list-style: none;
     padding: 0;
@@ -91,33 +83,29 @@ aside ul {
 }
 
 aside li {
-    padding: 0.5em 0;
-    font-size: 0.95em;
+    padding: 0.8em 0.5em;
+    font-size: 0.98em;
     color: #fff;
     cursor: pointer;
     font-family: 'Press Start 2P', monospace;
     border-left: 4px solid transparent;
     transition: color 1s, border-color 1s, background 0.3s;
+    border-radius: 5px;
 }
-
-aside li:hover, aside li.myhubs {
+aside li:hover, aside li.active {
     color: #000;
     background: var(--arcade-color, #FF0000);
     border-left: 4px solid #fff;
 }
 
-aside li.myhubs {
-    margin-top: 1em;
-    font-weight: bold;
-}
-
-.about {
+section.about {
     flex: 1;
     background: #111;
     border-radius: 12px;
     box-shadow: 0 2px 16px #0008;
     padding: 1.4em 1.2em;
     margin-bottom: 2em;
+    min-height: 120px;
 }
 
 .about h2 {
@@ -128,6 +116,42 @@ aside li.myhubs {
     transition: color 1s;
 }
 
+#brainrot-container {
+    position: relative;
+    background: #191919;
+    border: 2.5px solid var(--arcade-color, #FF0000);
+    border-radius: 14px;
+    box-shadow: 0 2px 18px #000e;
+    padding: 2.2em 1.2em 1.2em 1.2em;
+    margin-top: 2em;
+    width: 100%;
+    font-family: 'Press Start 2P', monospace;
+    color: #fff;
+    font-size: 0.85em;
+    word-break: break-all;
+    transition: border-color 1s;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: var(--arcade-color, #FF0000);
+    color: #000;
+    border: none;
+    border-radius: 7px;
+    padding: 0.28em 1.2em;
+    cursor: pointer;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.78em;
+    box-shadow: 0 1px 8px #0005;
+    transition: background 1s, color 1s;
+}
+
+.copy-btn:active {
+    filter: brightness(0.9);
+}
+
 @media (max-width: 700px) {
     main {
         flex-direction: column;
@@ -135,5 +159,8 @@ aside li.myhubs {
     }
     aside {
         width: 100%;
+    }
+    #brainrot-container {
+        font-size: 0.73em;
     }
 }
