@@ -1,23 +1,27 @@
 body {
     margin: 0;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: radial-gradient(ellipse at bottom right, #181e29 60%, #151923 100%);
-    color: #d0e6fa;
+    font-family: 'Press Start 2P', 'Arial', monospace;
+    background: #000;
+    color: #fff;
     min-height: 100vh;
+    transition: background 1s, color 1s;
 }
 
 header {
-    background: #181e29;
+    background: #111;
     padding: 1.2rem 0 1rem 0;
     text-align: center;
-    box-shadow: 0 2px 16px #0004;
+    box-shadow: 0 2px 16px #000a;
 }
 
 h1 {
-    color: #34aaff;
+    color: var(--arcade-color, #FF0000);
     margin: 0.2em 0 0.6em 0;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.3em;
+    transition: color 1s;
 }
 
 .search-bar {
@@ -30,46 +34,29 @@ h1 {
 
 .search-bar input {
     width: 220px;
-    padding: 0.5em 1em;
-    border-radius: 6px 0 0 6px;
-    border: none;
-    font-size: 1em;
-    outline: none;
-}
-
-.search-bar button {
-    border: none;
-    border-radius: 0 6px 6px 0;
-    background: linear-gradient(90deg, #2899ff 60%, #4c66f2 100%);
+    padding: 0.6em 1em;
+    border-radius: 8px 0 0 8px;
+    border: 2px solid var(--arcade-color, #FF0000);
+    background: #000;
     color: #fff;
-    padding: 0.5em 1em;
+    font-size: 1em;
+    font-family: 'Press Start 2P', monospace;
+    outline: none;
+    transition: border-color 1s;
+}
+
+.yt-btn {
+    border: none;
+    border-radius: 0 8px 8px 0;
+    background: var(--arcade-color, #FF0000);
+    color: #fff;
+    padding: 0.6em 1.6em;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1em;
+    font-family: 'Press Start 2P', monospace;
     box-shadow: 0 2px 8px #0002;
-    transition: background .2s;
+    transition: background 1s, color 1s;
 }
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin-bottom: 0.5em;
-}
-
-.social-links a {
-    text-decoration: none;
-    color: #d0e6fa;
-    background: #232c3c;
-    border-radius: 8px;
-    padding: 0.5em 1.2em;
-    font-weight: 600;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 1px 6px #0002;
-}
-
-.social-links a.yt { color: #ff3c3c; }
-.social-links a.discord { color: #7289da; }
-.social-links a.github { color: #34aaff; }
 
 main {
     display: flex;
@@ -81,18 +68,20 @@ main {
 }
 
 aside {
-    min-width: 160px;
-    background: #181e29;
+    min-width: 180px;
+    background: #111;
     border-radius: 12px;
-    box-shadow: 0 2px 12px #0003;
+    box-shadow: 0 2px 12px #0008;
     padding: 1em;
     height: fit-content;
 }
 
 aside h2 {
-    color: #34aaff;
+    color: var(--arcade-color, #FF0000);
     font-size: 1.1em;
     margin-top: 0;
+    font-family: 'Press Start 2P', monospace;
+    transition: color 1s;
 }
 
 aside ul {
@@ -103,29 +92,40 @@ aside ul {
 
 aside li {
     padding: 0.5em 0;
-    font-size: 1em;
-    color: #e2eafc;
+    font-size: 0.95em;
+    color: #fff;
     cursor: pointer;
-    transition: color 0.2s;
+    font-family: 'Press Start 2P', monospace;
+    border-left: 4px solid transparent;
+    transition: color 1s, border-color 1s, background 0.3s;
 }
 
-aside li:hover {
-    color: #34aaff;
+aside li:hover, aside li.myhubs {
+    color: #000;
+    background: var(--arcade-color, #FF0000);
+    border-left: 4px solid #fff;
+}
+
+aside li.myhubs {
+    margin-top: 1em;
+    font-weight: bold;
 }
 
 .about {
     flex: 1;
-    background: #181e29;
+    background: #111;
     border-radius: 12px;
-    box-shadow: 0 2px 16px #0003;
+    box-shadow: 0 2px 16px #0008;
     padding: 1.4em 1.2em;
     margin-bottom: 2em;
 }
 
 .about h2 {
-    color: #34aaff;
+    color: var(--arcade-color, #FF0000);
     margin-top: 0;
     font-size: 1.1em;
+    font-family: 'Press Start 2P', monospace;
+    transition: color 1s;
 }
 
 @media (max-width: 700px) {
