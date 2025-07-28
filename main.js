@@ -1,23 +1,35 @@
-// Abre/fecha a página de scripts
-document.getElementById("myHubsBtn").addEventListener("click", () => {
-  const scriptsPage = document.getElementById("scriptsPage");
-  scriptsPage.style.display = scriptsPage.style.display === "none" ? "block" : "none";
+// RGB alternando entre verde e vermelho
+const rgbTab = document.getElementById('myHubsTab');
+let hue = 0;
+setInterval(() => {
+  hue += 1;
+  const r = Math.floor(255 * Math.abs(Math.sin(hue * 0.05)));
+  const g = Math.floor(255 * Math.abs(Math.sin(hue * 0.05 + Math.PI)));
+  rgbTab.style.backgroundColor = `rgb(${r},${g},0)`;
+}, 50);
+
+// Toggle da lista de scripts
+const tab = document.getElementById('myHubsTab');
+const list = document.getElementById('scriptList');
+tab.addEventListener('click', () => {
+  list.style.display = list.style.display === 'none' ? 'block' : 'none';
 });
 
-// Toggle do script expandido
-document.querySelectorAll(".toggle-script").forEach(button => {
-  button.addEventListener("click", () => {
-    const scriptBox = button.nextElementSibling;
-    scriptBox.style.display = scriptBox.style.display === "none" ? "block" : "none";
+// Expansão/retração dos scripts
+document.querySelectorAll('.script-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const content = button.nextElementSibling;
+    const isVisible = content.style.display === 'block';
+    content.style.display = isVisible ? 'none' : 'block';
   });
 });
 
-// Copiar script para a área de transferência
-document.querySelectorAll(".copy-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const code = btn.previousElementSibling.innerText.trim();
+// Botão copiar
+document.querySelectorAll('.copy-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const code = button.previousElementSibling.innerText;
     navigator.clipboard.writeText(code);
-    btn.innerText = "Copied!";
-    setTimeout(() => btn.innerText = "Copy", 2000);
+    button.innerText = 'Copiado!';
+    setTimeout(() => (button.innerText = 'Copiar'), 1500);
   });
 });
