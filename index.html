@@ -2,30 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SoyDevZer0</title>
+  <title>SoyDev UI</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="header">
-    <h1 class="logo">SoyDevZer0</h1>
-    <input type="text" placeholder="Buscar script." class="search-box">
-    <a href="https://youtube.com" class="youtube-button">YouTube</a>
+  <div class="navbar">
+    <button id="myHubsTab" class="rgb-tab">My Hub's</button>
   </div>
 
-  <!-- Botão animado -->
-  <button id="myHubsBtn" class="my-hubs-button">My Hub's</button>
-
-  <!-- Página com scripts (oculta inicialmente) -->
-  <div id="scriptsPage" class="scripts-page" style="display:none;">
-    <div class="script-item">
-      <button class="toggle-script">Steal A Brainrot (My)</button>
-      <div class="script-box" style="display:none;">
-        <pre>
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NumbZer0/Steal-A-Brainrot/main/SoyDevWinHub.lua"))()
-        </pre>
-        <button class="copy-btn">Copy</button>
+  <div class="script-list" id="scriptList" style="display: none;">
+    <div class="script-entry">
+      <button class="script-toggle">Steal A Brainrot (My)</button>
+      <div class="script-content">
+        <pre><code>-- Script aqui
+print("Steal A Brainrot executado!")</code></pre>
+        <button class="copy-btn">Copiar</button>
       </div>
     </div>
+    <!-- Você pode adicionar mais scripts aqui no mesmo formato -->
   </div>
 
   <script src="main.js"></script>
