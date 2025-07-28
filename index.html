@@ -1,35 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoyDevZer0</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Fonte arcade (Press Start 2P) -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>SoyDevZer0</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>SoyDevZer0</h1>
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar script...">
-            <button class="yt-btn" onclick="window.open('https://youtube.com/@soydevwin?si=BSZF9CMsJ1VT_NVi', '_blank')">
-                <span>🎮 YouTube</span>
-            </button>
-        </div>
-    </header>
-    <main>
-        <aside>
-            <ul>
-                <li class="myhubs active" onclick="showMyHubs()">My Hub's</li>
-            </ul>
-        </aside>
-        <section class="about" id="main-content">
-            <h2>Sobre Min</h2>
-            <p>Agora é SoyDevZer0!</p>
-        </section>
-    </main>
-    <script src="theme.js"></script>
-    <script src="main.js"></script>
+  <div class="header">
+    <h1 class="logo">SoyDevZer0</h1>
+    <input type="text" placeholder="Buscar script." class="search-box">
+    <a href="https://youtube.com" class="youtube-button">YouTube</a>
+  </div>
+
+  <!-- Botão animado -->
+  <button id="myHubsBtn" class="my-hubs-button">My Hub's</button>
+
+  <!-- Página com scripts (oculta inicialmente) -->
+  <div id="scriptsPage" class="scripts-page" style="display:none;">
+    <div class="script-item">
+      <button class="toggle-script">Steal A Brainrot (My)</button>
+      <div class="script-box" style="display:none;">
+        <pre>
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NumbZer0/Steal-A-Brainrot/main/SoyDevWinHub.lua"))()
+        </pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
