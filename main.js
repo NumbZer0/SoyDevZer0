@@ -1,32 +1,23 @@
-// Script para navegação e exibição dinâmica
+// Abre/fecha a página de scripts
+document.getElementById("myHubsBtn").addEventListener("click", () => {
+  const scriptsPage = document.getElementById("scriptsPage");
+  scriptsPage.style.display = scriptsPage.style.display === "none" ? "block" : "none";
+});
 
-function showMyHubs() {
-    // Deixa a aba My Hub's ativa
-    document.querySelectorAll('aside li').forEach(li => li.classList.remove('active'));
-    document.querySelector('aside li.myhubs').classList.add('active');
+// Toggle do script expandido
+document.querySelectorAll(".toggle-script").forEach(button => {
+  button.addEventListener("click", () => {
+    const scriptBox = button.nextElementSibling;
+    scriptBox.style.display = scriptBox.style.display === "none" ? "block" : "none";
+  });
+});
 
-    // Conteúdo do script
-    const script = `loadstring(game:HttpGet("https://raw.githubusercontent.com/NumbZer0/Steal-A-Brainrot-/refs/heads/main/SoyDevWinHub.lua"))()`;
-
-    // Exibe a caixa com o script e botão de copiar
-    document.getElementById('main-content').innerHTML = `
-        <h2>Steal A Brainrot (My)</h2>
-        <div id="brainrot-container">
-            <button class="copy-btn" onclick="copyScript()">Copy</button>
-            <code id="script-code">${script}</code>
-        </div>
-    `;
-}
-
-// Função para copiar o script
-function copyScript() {
-    const code = document.getElementById('script-code').innerText;
-    navigator.clipboard.writeText(code).then(() => {
-        let btn = document.querySelector('.copy-btn');
-        btn.innerText = "Copied!";
-        setTimeout(() => { btn.innerText = "Copy"; }, 1200);
-    });
-}
-
-// Deixar a aba My Hub's ativa ao carregar a página
-window.onload = showMyHubs;
+// Copiar script para a área de transferência
+document.querySelectorAll(".copy-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const code = btn.previousElementSibling.innerText.trim();
+    navigator.clipboard.writeText(code);
+    btn.innerText = "Copied!";
+    setTimeout(() => btn.innerText = "Copy", 2000);
+  });
+});
