@@ -1,66 +1,86 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #1c1c1c;
-  color: white;
+    margin: 0;
+    background-color: #000;
+    color: white;
+    font-family: 'Press Start 2P', monospace;
 }
 
-.navbar {
-  background-color: #111;
-  padding: 10px;
-  text-align: center;
+h1, h2, h3, h4 {
+    font-family: 'Press Start 2P', monospace;
+    color: red;
+    text-align: center;
 }
 
-.rgb-tab {
-  padding: 10px 20px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 6px;
-  background-color: red;
-  cursor: pointer;
-  transition: background-color 0.3s;
+input[type="text"] {
+    font-family: inherit;
+    background: #000;
+    color: red;
+    border: 2px solid red;
+    padding: 6px;
+    font-size: 12px;
 }
 
-.script-list {
-  margin: 20px;
+a {
+    font-family: inherit;
+    color: white;
+    background: red;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 12px;
 }
 
-.script-entry {
-  margin-bottom: 10px;
+a:hover {
+    background: #ff4d4d;
 }
 
-.script-toggle {
-  width: 100%;
-  padding: 10px;
-  background-color: #2c2c2c;
-  color: white;
-  border: none;
-  text-align: left;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
+.button-tab {
+    padding: 10px 20px;
+    font-size: 14px;
+    background: linear-gradient(90deg, red, lime, red);
+    animation: rgbCycle 2s infinite linear;
+    border: none;
+    font-family: 'Press Start 2P', monospace;
+    color: black;
+    border-radius: 6px;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
 }
 
-.script-content {
-  display: none;
-  background-color: #333;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 4px;
+@keyframes rgbCycle {
+    0% { background-color: red; }
+    50% { background-color: lime; }
+    100% { background-color: red; }
+}
+
+.script-box {
+    border: 2px solid red;
+    padding: 12px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+    background-color: #111;
+    border-radius: 12px;
+    box-shadow: 0 0 8px red;
+}
+
+.script-box code {
+    color: white;
+    display: block;
+    margin-top: 10px;
+    font-size: 11px;
+    word-break: break-word;
 }
 
 .copy-btn {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #0e7e0e;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
+    float: right;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    font-size: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', monospace;
 }
