@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>SoyDev UI</title>
-  <link rel="stylesheet" href="style.css">
+    <title>SoyDevZer0</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="navbar">
-    <button id="myHubsTab" class="rgb-tab">My Hub's</button>
-  </div>
+    <h1>SoyDevZer0</h1>
 
-  <div class="script-list" id="scriptList" style="display: none;">
-    <div class="script-entry">
-      <button class="script-toggle">Steal A Brainrot (My)</button>
-      <div class="script-content">
-        <pre><code>-- Script aqui
-print("Steal A Brainrot executado!")</code></pre>
-        <button class="copy-btn">Copiar</button>
-      </div>
+    <div style="text-align: center; margin: 20px;">
+        <input type="text" placeholder="Buscar script.">
+        <a href="https://youtube.com" target="_blank">YouTube 🎮</a>
     </div>
-    <!-- Você pode adicionar mais scripts aqui no mesmo formato -->
-  </div>
 
-  <script src="main.js"></script>
+    <button class="button-tab" onclick="toggleMyHubs()">My Hub's</button>
+
+    <div id="myHubsContainer" style="display:none;">
+        <div class="script-box">
+            <h3 style="color:red;">Steal A Brainrot <span style="color:#aaa;">(My)</span></h3>
+            <code id="scriptCode">
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NumbZer0/Steal-A-Brainrot-/refs/heads/main/SoyDevWinHub.lua"))()
+            </code>
+            <button class="copy-btn" onclick="copyScript()">Copy</button>
+        </div>
+    </div>
 </body>
 </html>
